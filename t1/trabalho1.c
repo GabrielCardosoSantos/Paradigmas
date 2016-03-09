@@ -20,7 +20,6 @@ void html(char** vetor, int fim){
         }
     }
     fclose(gravar);
-    system("vencedores.html");
 }
 
 
