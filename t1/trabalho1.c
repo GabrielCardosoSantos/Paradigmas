@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "t1.h"
+#include "trabalho1.h"
 
 #define MAX 50
 void html(char** vetor, int fim){
@@ -20,7 +20,6 @@ void html(char** vetor, int fim){
         }
     }
     fclose(gravar);
-    system("vencedores.html");
 }
 
 
