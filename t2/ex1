@@ -1,2 +1,0 @@
-someSquad :: Int -> Int -> Int
-someSquad (x^2 + x^2)

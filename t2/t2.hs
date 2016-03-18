@@ -26,4 +26,28 @@ listNegat num = filter(< 0) num
 
 --exercicio 7
 umEcem :: [Integer] -> [Integer]
-umEcem num = map ((filter (< 100) num) && (filter(> 1) num)) num
+umEcem num = filter (\num -> num > 1 && num < 100) num
+
+--exercicio 8
+idade :: [Integer] -> [Integer]
+idade num = map (2016-) (filter(< 46) num)
+
+--exercicio 9
+listPar :: [Integer] -> [Integer]
+listPar num = filter (\num -> mod num 2 == 0) num
+
+--exercicio 10
+charFound :: Char -> String -> Bool
+charFound a b
+		|filter (== a) b /= [] = True
+		|filter (== a) b == [] = False
+
+
+--exercicio 11
+
+
+--exercicio 12
+listaFim :: [String] -> [String]
+listaFim a = filter (\a -> last a == 'a') a
+
+
