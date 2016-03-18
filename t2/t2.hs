@@ -44,7 +44,7 @@ charFound a b
 
 
 --exercicio 11
-
+--takeWhile (/= 'd') "Gabriel Cardoso dos Santos"
 
 --exercicio 12
 listaFim :: [String] -> [String]
