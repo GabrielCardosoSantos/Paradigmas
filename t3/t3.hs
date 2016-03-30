@@ -29,7 +29,7 @@ listNeg x = if (head x < 0)
 
 --exercicio 6
 semVogal :: String -> String
-semVogal s = filter (\s -> if elem s "aeiouAEIOU" then False else True) s
+semVogal s = filter (\s ->notElem s "aeiouAEIOU") s
 
 
 --exercicio 7
