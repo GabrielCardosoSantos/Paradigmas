@@ -49,20 +49,17 @@ pairWithAll i x = (i, head x) : pairWithAll i (tail x)
 
 --EXERCICIO 8
 genRects :: Int -> (Int, Int) -> [(Float, Float, Float, Float)]
-genRects n (ix,jy) = 
-	[((fromIntegral ix) + x, fromIntegral jy, 5.5, 5.5) 
-	| x <- [0.0, 5.5.. 5.5 * (fromIntegral (n - 1))]]
-
+genRects n (i,j) = [((fromIntegral i) + x, fromIntegral j, 5.5, 5.5) | x <- [0.0, 5.5.. 5.5 * (fromIntegral (n - 1))]]
 
 --EXERCICIO 9
-func :: [(Int, Int)] -> ([Int], [Int])
-func []  =  ([], [])
-func x = (fst (head x) : (fst (func (tail x))), snd (head x): (snd (func (tail x))))
+func :: [(Int, Int)] -> ([Int], [Int])
+func [] = ([], [])
+func x = (fst (head x) : (fst (func (tail x))), snd (head x): (snd (func (tail x))))
 
 
 --EXERCICIO 10
-func1 :: [(Int, Int)] -> ([Int], [Int])
-func1 l = ([fst x | x <- l] ,[snd x| x <- l])
+func1 :: [(Int, Int)] -> ([Int], [Int])
+func1 l = ([fst x | x <- l] ,[snd x| x <- l])
 
 --EXERCICIO 11
 func2 :: [(Int, Int)] -> ([Int], [Int])
