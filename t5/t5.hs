@@ -73,14 +73,10 @@ isCpfOk :: [Int] -> Bool
 isCpfOk cpf = 
   let -- calcula primeiro digito
       digitos1 = take 9 cpf
-      --expr1 = (sum $ zipWith (*) digitos1 [10,9..2]) `mod` 11
-      --dv1 = if expr1 < 2 then 0 else 11-expr1
       dv1 = calcCpf 10 digitos1
 
       -- calcula segundo digito
       digitos2 = digitos1 ++ [dv1]
-      --expr2 = (sum $ zipWith (*) digitos2 [11,10..2]) `mod` 11
-      --dv2 = if expr2 < 2 then 0 else 11-expr2
       dv2 = calcCpf 11 digitos2
    in dv1 == cpf !! 9 && dv2 == cpf !! 10
 
@@ -90,7 +86,7 @@ main = do
       result = isCpfOk digitos
   putStrLn (show result)
 
-calcCpf :: Int -> [Int] -> Bool
-calcCpf x y
-	| expr1 <= (sum $ zipWith (*) y [x, x-1..2]) `mod` 11
-	where num <= if expr1 < 2 then 0 else 11-expr1
+calcCpf :: Int -> [Int] -> Int
+calcCpf i x = if expr < 2 then 0 else 11-expr 
+  where
+    expr = (sum $ zipWith (*) x [i, i-1..2]) `mod` 11
