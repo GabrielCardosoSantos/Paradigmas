@@ -55,7 +55,7 @@ mesmaPosicao(A, L1, L2) :-
 	L1 = [H1|_],
 	L2 = [H2|_],
 	A == H1, A == H2.
-mesmaPosicao(A, [_|T1], [_|T2]) :- 	mesmaPosicao(A, T1, T2).
+mesmaPosicao(A, [_|T1], [_|T2]) :- mesmaPosicao(A, T1, T2).
 
 %ex9
 comissao(0, [], []).
