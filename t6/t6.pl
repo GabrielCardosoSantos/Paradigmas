@@ -1,5 +1,5 @@
 %ex1
-zeroInit([H|_]) :- H =:= 0.
+zeroInit([0|_]).
 
 %ex2
 has5(L) :- L = ([_,_,_,_,_]).
@@ -50,12 +50,8 @@ positivos(L1, L2) :-
 positivos([_|T1],L) :- positivos(T1,L).
 
 %ex8
-mesmaPosicao(_, [], []):- false.
-mesmaPosicao(A, L1, L2) :-
-	L1 = [H1|_],
-	L2 = [H2|_],
-	A == H1, A == H2.
-mesmaPosicao(A, [_|T1], [_|T2]) :- mesmaPosicao(A, T1, T2).
+mesmaPosicao(A, [A|_],[A|_]).
+mesmaPosicao(A, [H1|T1], [_|T2]) :- A \= H1, mesmaPosicao(A, T1, T2).
 
 %ex9
 comissao(0, [], []).
