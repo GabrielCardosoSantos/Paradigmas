@@ -54,11 +54,19 @@ mesmaPosicao(A, [A|_],[A|_]).
 mesmaPosicao(A, [H1|T1], [_|T2]) :- A \= H1, mesmaPosicao(A, T1, T2).
 
 %ex9
-comissao(0, [], []).
-comissao(NP,LP,C) :-
-	NP > 0,
-	LP = [H1|T1],
-	C = [H2|T2],
-	
-	N1 is NP - 1,
-	comissao(N1, ).
+comissao(0, _, []).
+comissao(N, [H|T1], [H|T2]) :- 
+	N > 0, 
+	N1 is N-1, 
+	comissao(N1, T1, T2).
+comissao(N, [_|T1], T2) :- 
+	N > 0, 
+	comissao(N, T1, T2).
+
+%ex10
+azulejos(0, 0).
+azulejos(NA, NQ) :-
+	A is floor(sqrt(NA)),
+	N1 is NA - A*A,
+	azulejos(N1, N2),
+	NQ is N2 + 1.
