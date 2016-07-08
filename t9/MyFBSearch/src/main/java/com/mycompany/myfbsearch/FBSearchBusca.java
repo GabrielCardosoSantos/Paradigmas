@@ -55,10 +55,8 @@ public class FBSearchBusca implements Runnable{
         for(User u : aux){
             if (start){
                 if (u.getName().contains(name)){
-                    User aux1 = client.fetchObject(u.getId(), User.class, Parameter.with("fields", "picture"));
-                    ImageIcon i = new ImageIcon(aux1.getPicture().getUrl());
-                    FBSearchUser novo = new FBSearchUser(u.getName(), u.getId(), i);
-                    //FBSearchUser novo = new FBSearchUser(u.getName(), u.getId(), i);
+                    FBSearchUser novo = new FBSearchUser(u.getName(), u.getId(),
+                                new ImageIcon(new URL("http://graph.facebook.com/" + u.getId() + "/picture?type=large")));
                     users.add(novo);
                     table.add(novo);
                 }
